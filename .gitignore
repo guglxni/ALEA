@@ -1,0 +1,9 @@
+node_modules/
+.claude/
+dist/
+logs/
+*.log
+*.jsonl
+.env
+keys/
+data/blueprint_v1.bin

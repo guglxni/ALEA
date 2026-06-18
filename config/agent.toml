@@ -1,0 +1,35 @@
+[agent]
+name            = "agent-alpha"
+keypair_path    = "./keys/agent-alpha.json"
+tournament_id   = ""  # fill in before running
+
+[rpc]
+er_endpoint      = "wss://er.magicblock.app/table"
+l1_endpoint      = "https://api.devnet.solana.com"
+poll_interval_ms = 500
+
+[blueprint]
+path    = "./data/blueprint_v1.bin"
+variant = "short-deck"
+
+[sidecar]
+enabled                  = false
+llm_provider             = "anthropic"
+llm_model                = "claude-sonnet-4-6"
+api_key_env              = "LLM_API_KEY"
+max_hands_context        = 20
+confidence_decay_rate    = 0.9
+min_hands_before_exploit = 5
+
+[exploit_weights]
+max_weight = 0.5
+min_weight = -0.5
+
+[timeouts]
+action_deadline_buffer_ms = 2000
+rpc_timeout_ms            = 3000
+llm_timeout_ms            = 10000
+
+[logging]
+level    = "info"
+log_file = "./logs/agent.log"
